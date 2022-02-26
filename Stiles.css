@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu{
+    background-color: #e91818;
+    height: 100px;
+   background-color: #cf1bcf1e;
+}
+.sidebar{
+     float: left;
+    width: 250px;
+    height: 800px;
+    background-color: rgb(194, 193, 197);
+    overflow: auto;
+}
+
+.content{
+    float: right;
+    width: 1100px;
+    height: 800px;
+    background-color: rgb(235, 248, 233);
+    overflow: auto;
+}
+
+.page{
+   
+    width: 1350px;
+    margin: 0 auto;
+    background-color: rgb(219, 24, 144);
+    overflow: hidden;
+}
+footer{
+    background: rgb(235, 228, 228);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    align-self: flex-end;
+    bottom: 0;
+    z-index: 1;
+    @media screen and (max-width: 1100px){
+        display: none;
+    }
+        
+    
+}
+table{
+    width:6in;
+    max-width: 8.5in;
+    border-collapse: collapse;
+    max-height: 7in;
+}
+
+table, td, th {
+    border: 1px solid rgb(0, 0, 0);
+   font-size:20px ;
+   font-style: normal;
+   color:black;
+    overflow-x: auto;
+    text-align: center;
+    padding: 10px;
+}
+button{
+    color:white;
+    font-weight:bold;
+    background-color:rgb(148, 177, 238);
+    width:100px;
+    height:25px;
+    font-size:15px;
+}
+#fec{
+    color:rgb(24, 22, 22);
+    font-weight:bold;
+    background-color:rgb(232, 235, 243);
+    width:200px;
+    height:50px;
+    font-size:15px;
+}
+#act{
+    background-color:rgb(236, 240, 247);
+    width:200px;
+    height:50px;
+    font-size:15px;
+}
+#res{
+    background-color:rgb(236, 240, 247);
+    width:200px;
+    height:50px;
+    font-size:15px;
+}
+#lug{
+    background-color:rgb(236, 240, 247);
+    width:220px;
+    height:50px;
+    font-size:15px;
+}
+#corazon{
+    background-color:rgb(255,255,255);
+    overflow-x: auto;
+    font-size:30px;
+    width: 6.1in;
+    height: 7in;
+}
+#tablecrono{
+    background-color:rgb(255, 255, 255);
+  
+    font-size:15px;
+}
