@@ -10,15 +10,16 @@
 }
 .sidebar{
      float: left;
-    width: 250px;
+    width: 1000px;
     height: 800px;
     background-color: rgb(194, 193, 197);
     overflow: auto;
+    text-align: center;
 }
 
 .content{
     float: right;
-    width: 1100px;
+    width: 100px;
     height: 800px;
     background-color: rgb(235, 248, 233);
     overflow: auto;
@@ -98,7 +99,14 @@ button{
 }
 #corazon{
     background-color:rgb(255,255,255);
-    overflow-x: auto;
+   
+    font-size:30px;
+    width: 6.1in;
+    height: 7in;
+}
+#corazon1{
+    background-color:rgb(255, 255, 255);
+   
     font-size:30px;
     width: 6.1in;
     height: 7in;

@@ -1,3 +1,7 @@
+/* Autor leodevfull */
+/* 27-02-2022 */
+
+
 function guardar(){
    
     var _fec = document.getElementById("fec").value;
@@ -57,8 +61,8 @@ function enviarpdf() {
         width: 580
     };
     
-        
-
+        tamañoDiv();
+       
 
 
     // all coords and widths are in jsPDF instance's declared units
@@ -73,7 +77,7 @@ function enviarpdf() {
         
     },
     
-    /*pdf.addPage(),*/
+   
 
     function (dispose) {
         
@@ -111,4 +115,13 @@ function agregar() {
     }
 
 }
-
+function tamañoDiv(){
+    var div = document.getElementById("corazon");
+    var tb= document.getElementById("tbl");
+    if (tb.heigth>div.heigth){
+        div.heigth=tb.heigth;
+    }
+}
+function limpiar(){
+    document.getElementById("act").value="";
+}

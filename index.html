@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronograma</title>
     <link rel="stylesheet" href="Stiles.css">
+    
     <script src="Scriptcrono.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
+    <!-- Autor leodevfull-->
 </head>
+
 <body>
     <div class="menu" >Menu </div>
 
@@ -35,10 +39,13 @@
               </div> <br> <br>
             Fecha:  <input id="fec" style="margin:10px" type="date"><br><br>
             Actividad:<input id="act" style="margin:4px" type="text"><br><br>
-            Responsable: <input id="res" style="margin:20px" type="text" value="Catequista"><br><br>
-            Lugar: <input id="lug" style="margin:25px" type="text"value="Salon parroquial"><br><br>
+            Responsable: <input id="res" style="margin:20px"type="text" value="Catequista"><br><br>
+            Lugar: <input id="lug" style="margin:25px" type="text"value="Salón parroquial"><br><br>
             <button id="btn_guardar" onclick="guardar()">Guardar</button><br><br>
             <button id="btn_enviar" onclick="enviarpdf()">Guardar en pdf</button><br><br>
+            
+            <p><button type="button" onclick="runSpeechRecognition()">Speech to Text</button> &nbsp; <span id="action"></span></p>
+            <div id="output" class="hide"></div>
         </div>  
         
         <div class="content" >
@@ -48,7 +55,7 @@
     </div>
         
     <div id="corazon">
-        <table  >
+        <table id="tbl"  >
            
             <thead >
                 <tr id="mes"></tr>
@@ -66,6 +73,46 @@
         </table>
     </div>
    
+   
+    <script>
+        /* JS comes here */
+        function runSpeechRecognition() {
+            // get output div reference
+            var output = document.getElementById("output");
+            // get action element reference
+            var action = document.getElementById("action");
+            // new speech recognition object
+            var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+            var recognition = new SpeechRecognition();
+        
+            // This runs when the speech recognition service starts
+            function init(){
+            recognition.onstart = function() {
+                action.innerHTML = "<small>listening, please speak...</small>";
+              
+            };
+        }
+            setTimeout(init(),5000);
+            
+            recognition.onspeechend = function() {
+                action.innerHTML = "<small>stopped listening, hope you are done...</small>";
+                recognition.stop();
+            }
+          
+            // This runs when the speech recognition service returns result
+            recognition.onresult = function(event) {
+                var act = document.getElementById("act");
+                var transcript = event.results[0][0].transcript;
+                var confidence = event.results[0][0].confidence;
+                output.innerHTML = "<b>Text:</b> " + transcript + "<br/> <b>Confidence:</b> " + confidence*100+"%";
+                output.classList.remove("hide");
+                act.value=transcript;
+            };
+          
+             // start recognition
+             recognition.start();
+        }
+        </script>
   
  
 </body>
